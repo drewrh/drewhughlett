@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Testing image pruning
+          Testing image pruning pt 2
         </p>
         <a
           className="App-link"
