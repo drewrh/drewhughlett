@@ -15,26 +15,26 @@ do
 
 		mkdir -p $TARGET
 		git --work-tree=$TARGET --git-dir=$GIT_DIR checkout -f $BRANCH
-		cd $TARGET && cd drew-hughlett-site
+		cd $TARGET
 
-    echo "Building new Docker image"
-		docker build -f Dockerfile -t $IMAGE_NAME .
-		cd /
-		rm -rf $TARGET
+    # echo "Building new Docker image"
+		# docker build -f Dockerfile -t $IMAGE_NAME .
+		# cd /
+		# rm -rf $TARGET
 
-		# echo "Redeploying UI..."
-		if [ "$(docker ps -qa -f name=$CONTAINER_NAME)" ]; then
-			echo "Found container - $CONTAINER_NAME"
-			if [ "$(docker ps -q -f name=$CONTAINER_NAME)" ]; then
-				echo "Stopping running container - $CONTAINER_NAME"
-				docker stop $CONTAINER_NAME;
-			fi
-			echo "Removing stopped container - $CONTAINER_NAME"
-			docker rm $CONTAINER_NAME;
-		fi
+		# # echo "Redeploying UI..."
+		# if [ "$(docker ps -qa -f name=$CONTAINER_NAME)" ]; then
+		# 	echo "Found container - $CONTAINER_NAME"
+		# 	if [ "$(docker ps -q -f name=$CONTAINER_NAME)" ]; then
+		# 		echo "Stopping running container - $CONTAINER_NAME"
+		# 		docker stop $CONTAINER_NAME;
+		# 	fi
+		# 	echo "Removing stopped container - $CONTAINER_NAME"
+		# 	docker rm $CONTAINER_NAME;
+		# fi
 
-    docker run -d --name=$CONTAINER_NAME -p 80:80 $IMAGE_NAME
-		docker image prune
+    # docker run -d --name=$CONTAINER_NAME -p 80:80 $IMAGE_NAME
+		# docker image prune -f
 	else
 		echo "Ref $ref received. Doing nothing: only the ${BRANCH} branch may be deployed on this server."
 	fi
