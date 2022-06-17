@@ -16,7 +16,7 @@ do
 		cd $TARGET
 
     echo "Building and starting Docker services"
-		docker-compose down && docker-compose up --build -d 
+		docker-compose up --build -d && docker image prune -f
 		cd /
 		rm -rf $TARGET
 
