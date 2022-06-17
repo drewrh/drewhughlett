@@ -34,6 +34,7 @@ do
 		fi
 
     docker run -d --name=$CONTAINER_NAME -p 80:80 $IMAGE_NAME
+		docker image prune
 	else
 		echo "Ref $ref received. Doing nothing: only the ${BRANCH} branch may be deployed on this server."
 	fi
