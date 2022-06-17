@@ -1,6 +1,6 @@
 #!/bin/bash
-TARGET="/srv/tmp/drewhughlett"
-GIT_DIR="/srv/git/drewhughlett.git"
+TARGET="/home/drew/tmp/drewhughlett"
+GIT_DIR="/home/drew/code/drewhughlett.git"
 BRANCH="main"
 CONTAINER_NAME="drewhughlett"
 IMAGE_NAME="home"
