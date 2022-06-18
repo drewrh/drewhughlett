@@ -8,7 +8,6 @@ do
 	# only checking out the main (or whatever branch you would like to deploy)
 	if [ "$ref" = "refs/heads/$BRANCH" ];
 	then
-		filelist=$(git diff-tree --no-commit-id --name-only -r $newrev)
 		echo "Ref $ref received. Deploying ${BRANCH} branch to production"
 
 		mkdir -p $TARGET

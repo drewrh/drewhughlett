@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Testing new python post-receive hook pt 99
+          Testing new python post-receive hook finale
         </p>
         <a
           className="App-link"
