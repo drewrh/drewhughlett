@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Testing image pruning pt 7
+          Testing new python post-receive hook
         </p>
         <a
           className="App-link"
